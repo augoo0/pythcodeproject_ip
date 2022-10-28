@@ -1,0 +1,107 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+from getpass import getpass
+username=input("PLEASE ENTER YOUR USERNAME: ")
+print("*************************************************")
+password=getpass("PLEASE ENTER YOUR PASSWORD: ") 
+print("*************************************************")
+if username=="jomma" and password=="jomi":
+    print("WELCOME")
+print("*************************************************")
+if password=='jomi':
+    print("POLPULATION GROWTH FROM YEAR 2014 TO 2021")
+    print()
+print("*************************************************")
+print()
+
+import pandas as pd
+import matplotlib.pyplot as plt
+df=pd.read_csv("C:\\states.csv")
+pd.set_option('display.max_columns',None)
+pd.set_option('display.max_rows',None)
+pd.set_option('display.max_seq_items',None)
+pd.set_option('display.max_colwidth',100)
+pd.set_option('expand_frame_repr',False)
+print()
+print()
+print("*************************************************")
+print("OPERATION MENU")
+print("1) Display the entire data records.")
+print("2) To add a new column 2022 and set values. ")
+print("3) To rename a column in the table.")
+print("4) To display the size of the table.")
+print("5) To delete a column in the table.")
+print("6) To display the first 6 rows from the table.")
+print("7) To display the last 4 rows from the table.")
+print("8) To transpose the entire table.")
+print("9) To display the dimensions of the table.")
+print("10) Display column labels.")
+print("11) Bar graph showing the population growth in the 2017 from the table.")
+print("12) Line chart showing the polulation growth in the year 2019 from the table.")
+print("*************************************************")
+#collecting the choice from the use using input statement
+ch=int(input('Enter your choice : '))
+
+if ch==1:
+       print(df)
+
+if ch==2:
+       df['2022']=[12,23,45,12,45,33,67,94,23,45,67,18,10,56,34]
+       print(df)
+
+if ch==3:
+    df.rename(columns = {'2014' : '2011'},inplace=True)
+    print(df)
+
+if ch==4:
+    import numpy as np
+    s=df.size
+    print(s)
+
+if ch==5:
+    df=df.drop('2018',axis=1)
+    print(df)
+
+if ch==6:
+    df=df.head(6)
+    print(df)
+
+if ch==7:
+    df=df.tail(4)
+    print(df)
+
+if ch==8:
+    df=df.T
+    print(df)
+
+if ch==9:
+    df=df.ndim
+    print(df)
+
+if ch==10:
+    df=df.columns
+    print(df)
+
+if ch==11:
+    import matplotlib.pyplot as plt
+    import numpy as np
+    x=['Kerala','Karnataka','Tamil Nadu','Maharastra','Telangana','Andra Pradesh','Rajasthan','Bihar','Assam','Haryana','Goa','Gujarat','Tripura','Nagaland','Mizoram']
+    y=[3.5,6.3,5,11,6.7,5.3,15.9,52,26.4,15.9,19,22,7.,33,22]
+    plt.xlabel('STATES')
+    plt.ylabel('POPULATION IN 2017')
+    plt.title('bar graph of population growth in 2017')
+    plt.bar(x,y,color='blue',edgecolor='black',width=0.5)
+    plt.show()
+
+if ch==12:
+    import matplotlib.pyplot as plt
+    import numpy as np
+    x=['Kerala','Karnataka','Tamil Nadu','Maharastra','Telangana','Andra Pradesh','Rajasthan','Bihar','Assam','Haryana','Goa','Gujarat','Tripura','Nagaland','Mizoram']
+    y=[3.5,6.3,5,11,6.7,5.3,15.9,52,26.4,15.9,19,22,7.,33,22]
+    plt.xlabel('STATES')
+    plt.ylabel('POPULATION IN 2017')
+    plt.title("line chart of population growth in 2017")
+    plt.plot(x,y,linewidth=2,linestyle='dashed',marker='*',markersize='10',markeredgecolor='red')
+    plt.show()
