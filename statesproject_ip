@@ -2,17 +2,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-from getpass import getpass
-username=input("PLEASE ENTER YOUR USERNAME: ")
 print("*************************************************")
-password=getpass("PLEASE ENTER YOUR PASSWORD: ") 
-print("*************************************************")
-if username=="jomma" and password=="jomi":
-    print("WELCOME")
-print("*************************************************")
-if password=='jomi':
-    print("POLPULATION GROWTH FROM YEAR 2014 TO 2021")
-    print()
+print("POLPULATION GROWTH FROM YEAR 2014 TO 2021")
 print("*************************************************")
 print()
 
